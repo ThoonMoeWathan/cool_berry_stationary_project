@@ -55,9 +55,9 @@ class ProductController extends Controller
         $this->productValidationCheck($request,'create');
         $data=$this->requestProductInfo($request);
 
-        $fileName=uniqid().$request->file('image')->getClientOriginalName();
-        $request->file('image')->storeAs('public',$fileName);
-        $data['image']=$fileName;
+        $fileName = uniqid() . $request->file('productImage')->getClientOriginalName();
+        $request->file('productImage')->storeAs('public/', $fileName);
+        $data['image'] = $fileName;
 
         Product::create($data);
         return redirect()->route('product#list');
@@ -75,7 +75,7 @@ class ProductController extends Controller
                 Storage::delete('public/'.$oldImageName);
             }
             $fileName = uniqid().$request->file('productImage')->getClientOriginalName();
-            $request->file('productImage')->storeAs('public',$fileName);
+            $request->file('productImage')->storeAs('public/',$fileName);
             $data['image'] = $fileName;
         }
         Product::where('id',$request->productId)->update($data);
