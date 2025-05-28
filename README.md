@@ -62,7 +62,7 @@
 - **Frontend**: Blade Templates, HTML, CSS, Bootstrap
 - **Database**: MySQL
 - **Authentication**: Auth
-- **Other Tools**: Laravel Jetstream, Composer, NPM, Laravel Artisan CLI
+- **Other Tools**: Laravel Jetstream, Composer, NPM, Laravel Artisan CLI, AJAX
 
 ---
 
